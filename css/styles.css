@@ -4,3 +4,41 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+input {
+    width: 147px;
+}
+
+input[type="submit"] {
+    width: 40px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.yellow-bg {
+    color: red;
+    background-color: yellow;
+}
+
+.red-bg {
+    color: yellow;
+    background-color: red;
+}
+
+.result-table {
+    padding-top: 20px;
+}
