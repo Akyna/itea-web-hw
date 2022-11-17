@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <filter>
+        <filter-name>authFilter</filter-name>
+        <display-name>My Filter</display-name>
+        <description>This is my filter</description>
+        <filter-class>com.amboiko.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>authFilter</filter-name>
+        <url-pattern>/secret/*</url-pattern>
+    </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>com.amboiko.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>com.amboiko.RegistrationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>secret</servlet-name>
+        <servlet-class>com.amboiko.SecretServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>forbidden</servlet-name>
+        <servlet-class>com.amboiko.AuthorizationErrorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.amboiko.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>secret</servlet-name>
+        <url-pattern>/secret</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forbidden</servlet-name>
+        <url-pattern>/forbidden</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+</web-app>
