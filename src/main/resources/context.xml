@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="iMac" class="com.amboiko.xml.model.Product">
+        <constructor-arg name="id" value="101"/>
+        <constructor-arg name="name" value="Imac 2022"/>
+        <constructor-arg name="price" value="3400.89"/>
+    </bean>
+
+    <bean id="iPhone" class="com.amboiko.xml.model.Product">
+        <constructor-arg name="id" value="101"/>
+        <constructor-arg name="name" value="iPhone 14"/>
+        <constructor-arg name="price" value="800.0"/>
+    </bean>
+
+    <bean id="cart" class="com.amboiko.xml.model.Cart">
+        <constructor-arg name="maxSize" value="10"/>
+        <constructor-arg name="products">
+            <map>
+                <entry key-ref="iMac" value="2"/>
+                <entry key-ref="iPhone" value="4"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="customer" class="com.amboiko.xml.model.Customer">
+        <constructor-arg name="name" value="Akyna"/>
+        <constructor-arg name="cart" ref="cart"/>
+    </bean>
+
+</beans>
